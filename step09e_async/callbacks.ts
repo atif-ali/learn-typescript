@@ -9,3 +9,5 @@ function callingFunction(initialText: string, callback: (text: string) => void)
 
 callingFunction("myText", myCallBack);
 
+
+

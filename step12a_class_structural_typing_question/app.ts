@@ -1,3 +1,59 @@
+
+
+
+//OOP Pillars
+//1. Abstraction
+//2. Encapsulation
+//3. Inheritance
+//4. Polymorphism
+
+
+
+class car{
+    name: string;
+    driverName: string;
+    model: string;
+    brand: string;
+    modelYear: string;
+
+    // constructor(name: string, driverName: string, model: string){
+    //     this.name = name;
+    //     this.driverName = driverName;
+    //     this.model = model;
+    // }
+
+    constructor(name: string, driverName: string, model: string, brand: string, modelYear: string){
+        this.name = "";
+        this.driverName = "";
+        this.model = "";
+        this.brand = "";
+        this.modelYear = "2024";
+
+    }
+drive(){    
+    console.log(this.name + " car is driven by " + this.driverName );
+}
+
+}
+
+let carObject = new car("Tesla Car", "Atif", "Model S", "Tesla", "2024");
+console.log(carObject.name);
+console.log(carObject.driverName);
+console.log(carObject.model);
+console.log(carObject.brand);
+console.log(carObject.modelYear);
+carObject.drive()
+//console.log();
+carObject.name="Civic"
+carObject.driverName="Hamza"
+carObject.model="10th gen"
+carObject.brand="Toyota"
+carObject.modelYear="2024"
+carObject.drive()
+
+console.log("*******************");
+
+
 class Human {
     name: string;
     
@@ -59,7 +115,7 @@ h.eat();
 let r2 = r;
 r = a;//Animal has a name, Robot also has a name
 // "a" is a stale object therefore extra eat() method in "a" is ok
-
+// "r" is a fresh object therefore extra eat() method in "r" is not ok
 //a = r2;//Error, Robot does not have eat method
 
 
@@ -75,10 +131,11 @@ let hum : Human = new Animal("Dog");//Fresh Object
 
 
 
-let r0: Robot = new Animal("Donkey");//how is this possible?
+let r0: Robot = new Animal("Donkey");               //how is this possible?
 //another issue is that Donkey is a fresh object
 // therefore why is it allowing extra eat function in Robot type
 //without giving an error? I dont know must be missing something
+//
 
 var isItRobot = r0 instanceof Robot;
 console.log("Is Donkey a Robot: " + isItRobot);//false, giving the right results
@@ -88,6 +145,19 @@ console.log("Is Donkey a Animal: " + isItAnimal);//true, giving the right result
 
 //Now it is your reposibility to figure out 
 //why the above code is not giving an Error?
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -7,6 +7,16 @@ function buildName(firstName: string, lastName?: string) : string {
         return firstName;
 }
 
+function buildName0(firstName: string, lastName?: string) : string {
+    if (lastName)
+        return firstName + " " + lastName;
+    else
+        return firstName;
+}
+
+let result0 = buildName0("Bob");  //works correctly because last parameter is optional 
+
+
 let result1 = buildName("Bob");  //ok
 let result2 = buildName("Bob", "Adams", "Sr.");  //error, too many parameters
 var result3 = buildName("Bob", "Adams");  //also ok

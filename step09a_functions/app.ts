@@ -24,11 +24,16 @@ let myAdd3: (baseValue:number, increment:number)=>number = 	function(x: number, 
 let myAdd4 = (a : number, b : number) => a + b;
 //output will be: var myAdd4 = function(a : number, b : number) {return a + b};
 
-type GreetFunction = (a: string) => void;
+
+
+//CALLBACK FUNCTION
+type GreetFunction = (a: number) => number;
 function greeter(fn: GreetFunction) {
 	//....
+	fn(5436)
 }
 
+greeter((d:number) => d)
 
 											
 						

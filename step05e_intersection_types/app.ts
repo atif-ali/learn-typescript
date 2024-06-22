@@ -19,3 +19,5 @@ let obj1: intersected_type = {
     
 console.log(obj1.teacher_Id);
 console.log(obj1.name);
+
+

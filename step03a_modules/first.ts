@@ -1,3 +1,7 @@
 let a = 5;
+let A=10;
+export {a,A};
 
-export default a;
+const z="hey"
+
+export default z;

@@ -15,3 +15,4 @@ other.
 [Structural Typing & Duck Typing in TypeScript](https://www.tektutorialshub.com/typescript/structural-typing-duck-typing-in-typescript/)
 
 [Future TypeScript version may support Nominal Types](https://github.com/Microsoft/TypeScript/issues/202)
+

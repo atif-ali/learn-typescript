@@ -21,13 +21,54 @@ interface Sphere {
   
   interface Tube {
     diameter: number;
-    length: number;
+    length?: number;
   }
   
   let tube: Tube = { diameter: 12, length: 3 };
   
-  //tube = ball;//Error
-  ball = tube;
+  tube = ball;//Error because ball does not have length property
+  ball = tube; // executable because tube have the property diameter thus sufficient to assign
+
+
+  interface Ball1 {
+    diameter: number
+  }
+
+  interface Sphere1{
+    diameter: number,
+  }
+
+  let ball1: Ball1={diameter: 23}
+  let sphere1: Sphere1={diameter: 23}
+
+  ball1=sphere1
+  sphere1=ball1
+
+  console.log(ball1)
+  console.log(sphere1)
+
+  interface Tube1{
+    diameter: number,
+    length?: number
+  }
+
+  let tube1: Tube1={ diameter:32, length: 44}
+
+  ball1=tube1
+  tube1=ball1
+
+
+
+  console.log(tube1)
+  console.log(ball1)
+
+  console.log(tube1.length)
+//  console.log(ball1.length)
+
+
+
+
+
   
   // Because a ball does not have a length, then it cannot be
   // assigned to the tube variable. However, all of the members
@@ -50,12 +91,42 @@ interface Sphere {
 let myType = { name: "Zia", id: 1 };
 
 //Case 1
-myType = { id: 2,  name: "Tom" };//Case 1: can only assign a type which has the the same properties
+//myType = { id: 2,  name_person: "Tom" };//Case 1: can only assign a type which has the the same properties
 									//Object literals can only have properties that exist in contextual type
 
 
-//Case 2a
-myType = { id: 2,  name_person: "Tom" };//Case 2a: Error, renamed or missing property
+//Case 2a // error removed
+myType = { id: 2,  name: "Tom" };//Case 2a: Error, renamed or missing property 
+
+//------------*******-------------
+let custom = {firstVar: "test", secondVar: 23}
+
+custom={firstVar:"duck", secondVar:57}
+
+//custom={secondVar:46, thirdVar: 78}   //error because thirdVar is not declared
+
+var x:{id:number, [variable:string]: any}
+
+x={id:12, name:"test"}
+
+x={id:14, name_person:"tom"}
+
+x={id:67, age: 40}
+
+
+console.log(x)
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Case 2b 
 //A type can include an index signature to explicitly indicate that excess properties are permitted in with fresh objects:
@@ -66,7 +137,9 @@ x = { id: 1, fullname: "Zia" };  // Ok, `fullname` matched by index signature
 
 
 //Case 3
-myType = { id: 2,  name: "Tom", age: 22 };//Case 3: Error, excess property
+myType = { id: 2,  name: "Tom", //age: 22 
+  
+};//Case 3: Error, excess property
 
 
 
@@ -75,14 +148,14 @@ myType = { id: 2,  name: "Tom", age: 22 };//Case 3: Error, excess property
 
 //Case when STALE object literal are assigned to a variable 
 
-let myType2 = { id: 2,  name: "Tom" };
+let myType2 = { id: 2,  firstName: "Tom" };
 
 //Case 1
-myType = myType2;//Case 1: can only assign a type which has the the same properties, rule same for fresh and stale object
+//myType = myType2;//Case 1: can only assign a type which has the the same properties, rule same for fresh and stale object
 
-let myType3 = { id: 2,  name_person: "Tom" };
+let myType3 = { id: 2,  firstName: "saadi",name_person: "Tom" };
 //Case 2a
-myType = myType3;//Case 2: Error, renamed or missing property, rule same for stale and fresh object 
+//myType = myType3;//Case 2: Error, renamed or missing property, rule same for stale and fresh object 
 
 
 //Case 2b
@@ -95,7 +168,14 @@ x = y;// Ok, `fullname` matched by index signature
 
 var myType4 = { id: 2,  name: "Tom", age: 22 };
 
-//Case 3
+myType={ id: 2,  name: "Tom", age: 22 }       // fresh
+
+
+// myType4                                  =           myType
+// {id:45, name:"testCustom", age:45}       =     {id:45, name:"Tomy"}           
+myType4=myType
+
+//Case 3    stale object myType4
 myType = myType4;//Case 3: Ok, excess property allowed in case of stale object which is different from fresh object
 
 

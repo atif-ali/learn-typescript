@@ -36,7 +36,7 @@ if (passingResponse[1] === 200) {
 // the right index, and even raise an error if you try to
 // access an object at an un-declared index.
 
-passingResponse[2];
+//passingResponse[2];
 
 // A tuple can feel like a good pattern for short bits of
 // connected data or for fixtures.
@@ -78,3 +78,6 @@ calculatePayForEmployee(staff[1][0], payStubs[1][1], payStubs[1][2]);
 // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#tuples-in-rest-parameters-and-spread-expressions
 // https://auth0.com/blog/typescript-3-exploring-tuples-the-unknown-type/
 
+
+
+// 

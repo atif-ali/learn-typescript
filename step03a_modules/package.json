@@ -1,8 +1,9 @@
 {
-  "name": "step00_helloworld",
+  "name": "step03a_modules",
   "version": "1.0.0",
   "description": "[For the latest docs](https://www.typescriptlang.org/docs/)",
-  "main": "app.js",
+  "main": "index.js",
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

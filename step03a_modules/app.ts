@@ -1,4 +1,6 @@
-import a from "./first";
-import {b, c as d} from "./second";
+// import {a,A} from "./first";
+// import {b, c as d} from "./second";
 
-console.log(a + b + d);
+// console.log(a + b + d);
+
+
